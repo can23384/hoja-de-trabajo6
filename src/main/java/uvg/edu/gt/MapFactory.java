@@ -13,7 +13,7 @@ public class MapFactory {
             case "LinkedHashMap":
                 return new LinkedHashMap<>();
             default:
-                throw new IllegalArgumentException("Invalid map type");
+                throw new IllegalArgumentException("Tipo de Map invalido");
         }
     }
 }
