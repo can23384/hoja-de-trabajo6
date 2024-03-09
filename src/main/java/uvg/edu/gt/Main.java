@@ -7,6 +7,9 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Seleccionar la implementación de MAP que usará su programa:");
+        System.out.println("1. HashMap");
+        System.out.println("2. TreeMap");
+        System.out.println("3. LinkedHashMap");
         int choice = scanner.nextInt();
         String mapType;
         switch (choice) {
@@ -20,7 +23,7 @@ public class Main {
                 mapType = "LinkedHashMap";
                 break;
             default:
-                System.out.println("Invalid choice. Using HashMap as default.");
+                System.out.println("Opcion no existente, se usara el HashMap.");
                 mapType = "HashMap";
             
         }

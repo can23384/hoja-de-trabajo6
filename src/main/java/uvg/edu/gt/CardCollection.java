@@ -26,37 +26,35 @@ public class CardCollection implements CardCollectionOperations {
     public void addCard(String cardName) {
         if (allCards.containsKey(cardName)) {
             userCollection.put(cardName, userCollection.getOrDefault(cardName, 0) + 1);
-            System.out.println("Card added successfully.");
+            System.out.println("Carta agregada.");
         } else {
-            System.out.println("Error: Card not found.");
+            System.out.println("Error: Carta no existe.");
         }
     }
 
     @Override
     public String getCardType(String cardName) {
-        return allCards.getOrDefault(cardName, "Card not found");
+        return allCards.getOrDefault(cardName, "Carta no encontrada");
     }
 
     @Override
     public void displayUserCollection() {
-        System.out.println("User Collection:");
+        System.out.println("Coleccion del usuario:");
         for (Map.Entry<String, Integer> entry : userCollection.entrySet()) {
-            System.out.println(entry.getKey() + " | " + allCards.get(entry.getKey()) + " | Quantity: " + entry.getValue());
+            System.out.println(entry.getKey() + " | " + allCards.get(entry.getKey()) + " | Cantidad: " + entry.getValue());
         }
     }
 
     @Override
     public void displaySortedUserCollection() {
         TreeMap<String, Integer> sortedUserCollection = new TreeMap<>(userCollection);
-        System.out.println("Sorted User Collection:");
         for (Map.Entry<String, Integer> entry : sortedUserCollection.entrySet()) {
-            System.out.println(entry.getKey() + " | " + allCards.get(entry.getKey()) + " | Quantity: " + entry.getValue());
+            System.out.println(entry.getKey() + " | " + allCards.get(entry.getKey()) + " | Cantidad: " + entry.getValue());
         }
     }
 
     @Override
     public void displayAllCards() {
-        System.out.println("All Cards:");
         for (Map.Entry<String, String> entry : allCards.entrySet()) {
             System.out.println(entry.getKey() + " | " + entry.getValue());
         }
@@ -65,7 +63,6 @@ public class CardCollection implements CardCollectionOperations {
     @Override
     public void displaySortedAllCards() {
         TreeMap<String, String> sortedAllCards = new TreeMap<>(allCards);
-        System.out.println("Sorted All Cards:");
         for (Map.Entry<String, String> entry : sortedAllCards.entrySet()) {
             System.out.println(entry.getKey() + " | " + entry.getValue());
         }
